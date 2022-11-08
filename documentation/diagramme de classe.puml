@@ -32,7 +32,7 @@ class Categorie {
 -CreateAd : datetime
 }
 
-Ville --> Etablissement
-Categorie --> Etablissement
+Ville "0..*"-->"1..1" Etablissement
+Categorie "0..*"-->"1..*" Etablissement
 
 @enduml
