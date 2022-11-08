@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Etablissement {
+-Nom : string
+-Slug : string
+-Description : string
+-Numéro Téléphone : string
+-Adresse Postale : string
+-Ville : ville
+-Adresse Mail : string
+-Image : string
+-Actif : bool
+-Accueil : bool
+-CreateAd : datetime
+-UpdatedAT : datetime
+-Categorie : categorie
+}
+
+class Ville {
+-Nom : string
+-Code Postale : string
+-Nom Departement : string
+-Numéro Departement : string
+-Nom Région : string
+
+}
+
+class Categorie {
+-Nom : string
+-CreateAd : datetime
+}
+
+Ville --> Etablissement
+Categorie --> Etablissement
+
+@enduml
