@@ -40,7 +40,7 @@ class CategorieRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Categorie[] Returns an array of Categorie objects
+//     * @return CategorieFixtures[] Returns an array of CategorieFixtures objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class CategorieRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Categorie
+//    public function findOneBySomeField($value): ?CategorieFixtures
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')

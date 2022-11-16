@@ -44,14 +44,18 @@ class ImportVille extends Command
 
 
         foreach ($csv as $import ) {
-            $ville = new Ville();
-            $ville->setNom($import['Commune']);
-            $ville->setCodePostale($import['Code postal']);
-            $ville->setNomDepartement($import['Nom département']);
-            $ville->setNumeroDepartement($import['Département']);
-            $ville->setNomRegion($import['Région']);
+
 
             if ($import['Département'] == 25 |$import['Département'] == 90 |$import['Département'] == 39 |$import['Département'] == 70){
+                $ville = new Ville();
+                if (empty($import['Ancienne commune'])){
+                    $ville->setNom($import['Commune']);
+                }
+                $ville->setNom($import['Commune'].$import['Ancienne commune']);
+                $ville->setCodePostale($import['Code postal']);
+                $ville->setNomDepartement($import['Nom département']);
+                $ville->setNumeroDepartement($import['Département']);
+                $ville->setNomRegion($import['Région']);
                 $this->manager->persist($ville);
             }
         }
