@@ -48,8 +48,8 @@ class EtablissementFixtures extends Fixture
                 ->setUpdatedAT($faker->dateTimeBetween('-8 week'))
                 ->setDescription($faker->paragraphs(3, true))
                 //doit avoir plusieur catégorie
+                ->addCategorie($this->categorieRepository->find($faker->numberBetween($minCategorie->getId(), $maxCategorie->getId())))
                 ->addCategorie($this->categorieRepository->find($faker->numberBetween($minCategorie->getId(), $maxCategorie->getId())));
-
             $manager->persist($etablissement);
         }
 
