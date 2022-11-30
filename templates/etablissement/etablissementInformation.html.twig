@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EtablissementController!{% endblock %}
+
+{% block body %}
+
+
+    <ul>
+            <div class="container mt-5 d-flex justify-content-center">
+                <div class="row  " style="width: 50%; ">
+                    <div class="card card-block ">
+                        <img class="card-img-top" src="{{ etablissement.Image }}" style="width: 100%" alt="Card image">
+                        <div class="card-block">
+                            <h4 class="card-title text-center mt-4 ">{{ etablissement.Nom }}</h4>
+                            <p class="card-text">{{ etablissement.Description }}</p>
+                            <p class="card-text text-center ">{{ etablissement.AdressePostale }} {{ etablissement.ville.CodePostale }} {{ etablissement.ville.nom}} </p>
+                            <p class="card-text text-center ">Email: {{etablissement.AdresseMail}} Téléphone : {{etablissement.NumeroTelephone }}  </p>
+                            <p class="text-center">
+                                {% for categories in etablissement.categorie %}
+
+                                    <span class="badge bg-secondary text-wrap"> {{ categories.nom }}</span>
+
+                                {% endfor %}
+                            </p>
+
+                            <div class="text-center mb-4">
+                                <a href="{{ path('app_etablissement') }}" class=" btn btn-primary ">Retour</a>
+                            </div>
+                                <div class="card-footer text-muted text-center">
+                                {{ etablissement.CreateAd | date('m/d/Y') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </ul>
+
+{% endblock %}
