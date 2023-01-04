@@ -41,7 +41,6 @@ class User {
 -UpdatedUp : datetime
 -Role : array
 -Actif : bool
--Favoris : array
 }
 User "0..*"--"0..*" Etablissement
 Ville "1..1"--"0..*" Etablissement
