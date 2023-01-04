@@ -16,7 +16,7 @@
                     <img class="card-img-top" src="{{ etablissement.Image }}"  alt="Card image">
                     <div class="card-block mt-4 text-center">
                         <h4 class="card-title ">{{ etablissement.Nom }}</h4>
-                        <p class="card-text">{{ etablissement.Description | striptags |slice(0,75) }}</p>
+                        <p class="card-text">{{ etablissement.Description |slice(0,75) }}</p>
                         <p class="card-text">{{ etablissement.ville.CodePostale }} {{ etablissement.ville.nom}} </p>
                         <p class="card-text">
                         {% for categories in etablissement.categorie %}

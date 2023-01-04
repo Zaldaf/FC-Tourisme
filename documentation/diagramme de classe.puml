@@ -8,14 +8,13 @@ class Etablissement {
 -Description : string
 -Numéro Téléphone : string
 -Adresse Postale : string
--Ville : ville
 -Adresse Mail : string
 -Image : string
 -Actif : bool
 -Accueil : bool
 -CreateAd : datetime
 -UpdatedAT : datetime
--Categorie : [] categorie
+
 }
 
 class Ville {
@@ -32,7 +31,20 @@ class Categorie {
 -CreateAd : datetime
 }
 
-Ville "0..*"--"1..1" Etablissement
-Categorie "0..*"--"1..*" Etablissement
+class User {
+-Prenom : string
+-Nom : string
+-pseudo : string
+-mail : string
+-Mot de passe : string
+-CreatedAt : datetime
+-UpdatedUp : datetime
+-Role : string
+-Actif : bool
+
+}
+User "0..*"--"0..*" Etablissement
+Ville "1..1"--"0..*" Etablissement
+Categorie "1..*"--"0..*" Etablissement
 
 @enduml

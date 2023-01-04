@@ -50,8 +50,9 @@ class ImportVille extends Command
                 $ville = new Ville();
                 if (empty($import['Ancienne commune'])){
                     $ville->setNom($import['Commune']);
+                }else{
+                    $ville->setNom($import['Commune'].'-'.$import['Ancienne commune']);
                 }
-                $ville->setNom($import['Commune'].$import['Ancienne commune']);
                 $ville->setCodePostale($import['Code postal']);
                 $ville->setNomDepartement($import['Nom département']);
                 $ville->setNumeroDepartement($import['Département']);
