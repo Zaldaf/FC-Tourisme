@@ -30,6 +30,8 @@ class UserFixtures extends Fixture
             }else{
                 $user->setActif(1);
             }
+            $user->setRoles(['ROLE_USER']);
+
             $manager->persist($user);
 
         }
